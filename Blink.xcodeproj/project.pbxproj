@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025F596ACD7C3DCEA1390FEA /* SharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA11B50081E1958450C8B30 /* SharingService.swift */; };
 		0360F9D0F400F4CB5104C167 /* PlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D72D210C19B8502FDD810 /* PlaybackView.swift */; };
 		05AD3B72A6B18E939F42E3EC /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685171DB45E69143C88A89E8 /* RecordView.swift */; };
+		0C3A49618D0A0624E762B4DD /* SmartCategorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0CCDE17DAC053C1CA6A09B /* SmartCategorizationService.swift */; };
 		0DD89C6A3F7C3FDCEC4BE698 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C26ECB05478C555E7069E7 /* ContentView.swift */; };
+		24FFE2E2B1A6F570F0146086 /* SharedAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9F3C14E179958CF055E1E1 /* SharedAlbumView.swift */; };
+		250F680BAA5452B4DDF003E0 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F864AA3EE824DE452C94E20C /* Vision.framework */; };
 		51ED3E4E24A59133670FA2CF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83610EEA0A6FC7342A09E06E /* SettingsView.swift */; };
 		534B1A90C321C5073F9B6C44 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EBBEF69DF0FA385D2C7A9B /* AVKit.framework */; };
 		5625DF76C581CA98DF667456 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC61C046C607813C07572695 /* AVFoundation.framework */; };
+		5954CB9E6D7CA49CFA596EF7 /* AIVisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56549B3A4E606E2A82A81AD8 /* AIVisionService.swift */; };
 		610D54EBF0E3177C8EF6C88B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 904AE99B338B9CB4A3594DDB /* Assets.xcassets */; };
+		782AA593D0E629EEC7050965 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B6162A386D3308C54AD1A2 /* CoreImage.framework */; };
 		8E0111C6713BAFFAD5212413 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262F592ECE28B50B123CA133 /* SwiftUI.framework */; };
+		9FC461950DB64F1AA86FD7C2 /* MonthlyReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353EA2FC92D4ADD3E3CC7E90 /* MonthlyReelView.swift */; };
 		AD3134A00A19621650D48045 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80490EE1AAAF5F57A5A72D /* CalendarView.swift */; };
 		D480D4B8BC8F46752EE261B6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFD0424E841D9B578986EF2 /* AppKit.framework */; };
 		E195D60D105F499BD389D299 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B6ACABB0F149D3D31EB37 /* MenuBarController.swift */; };
@@ -26,18 +33,25 @@
 /* Begin PBXFileReference section */
 		13EBBEF69DF0FA385D2C7A9B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		262F592ECE28B50B123CA133 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		353EA2FC92D4ADD3E3CC7E90 /* MonthlyReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyReelView.swift; sourceTree = "<group>"; };
 		454B6ACABB0F149D3D31EB37 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		48431B2C296BDB92BF0BB93C /* Blink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56549B3A4E606E2A82A81AD8 /* AIVisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIVisionService.swift; sourceTree = "<group>"; };
 		5B35E5A25DF6DC6DDDAE26BA /* BlinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkApp.swift; sourceTree = "<group>"; };
 		5F80490EE1AAAF5F57A5A72D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		637D72D210C19B8502FDD810 /* PlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackView.swift; sourceTree = "<group>"; };
 		685171DB45E69143C88A89E8 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		82B6162A386D3308C54AD1A2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		83610EEA0A6FC7342A09E06E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8A9F3C14E179958CF055E1E1 /* SharedAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAlbumView.swift; sourceTree = "<group>"; };
 		904AE99B338B9CB4A3594DDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AECF380F2D771C4216370063 /* VideoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStore.swift; sourceTree = "<group>"; };
+		BAA11B50081E1958450C8B30 /* SharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingService.swift; sourceTree = "<group>"; };
+		BB0CCDE17DAC053C1CA6A09B /* SmartCategorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCategorizationService.swift; sourceTree = "<group>"; };
 		CBFD0424E841D9B578986EF2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DC61C046C607813C07572695 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F6C0DB6EC796F5BFE1E1A673 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		F864AA3EE824DE452C94E20C /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		F9C26ECB05478C555E7069E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +64,8 @@
 				D480D4B8BC8F46752EE261B6 /* AppKit.framework in Frameworks */,
 				8E0111C6713BAFFAD5212413 /* SwiftUI.framework in Frameworks */,
 				534B1A90C321C5073F9B6C44 /* AVKit.framework in Frameworks */,
+				250F680BAA5452B4DDF003E0 /* Vision.framework in Frameworks */,
+				782AA593D0E629EEC7050965 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +78,9 @@
 				CBFD0424E841D9B578986EF2 /* AppKit.framework */,
 				DC61C046C607813C07572695 /* AVFoundation.framework */,
 				13EBBEF69DF0FA385D2C7A9B /* AVKit.framework */,
+				82B6162A386D3308C54AD1A2 /* CoreImage.framework */,
 				262F592ECE28B50B123CA133 /* SwiftUI.framework */,
+				F864AA3EE824DE452C94E20C /* Vision.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,6 +91,16 @@
 				904AE99B338B9CB4A3594DDB /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		615B80A6D82C3715F1AEC0D8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				56549B3A4E606E2A82A81AD8 /* AIVisionService.swift */,
+				BAA11B50081E1958450C8B30 /* SharingService.swift */,
+				BB0CCDE17DAC053C1CA6A09B /* SmartCategorizationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B23DD3B5EFB562B7C2FAEE85 = {
@@ -92,11 +120,14 @@
 				5F80490EE1AAAF5F57A5A72D /* CalendarView.swift */,
 				F9C26ECB05478C555E7069E7 /* ContentView.swift */,
 				454B6ACABB0F149D3D31EB37 /* MenuBarController.swift */,
+				353EA2FC92D4ADD3E3CC7E90 /* MonthlyReelView.swift */,
 				637D72D210C19B8502FDD810 /* PlaybackView.swift */,
 				685171DB45E69143C88A89E8 /* RecordView.swift */,
 				83610EEA0A6FC7342A09E06E /* SettingsView.swift */,
+				8A9F3C14E179958CF055E1E1 /* SharedAlbumView.swift */,
 				F6C0DB6EC796F5BFE1E1A673 /* Theme.swift */,
 				AECF380F2D771C4216370063 /* VideoStore.swift */,
+				615B80A6D82C3715F1AEC0D8 /* Services */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -173,13 +204,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5954CB9E6D7CA49CFA596EF7 /* AIVisionService.swift in Sources */,
 				F3894131CC0909CE004B214D /* BlinkApp.swift in Sources */,
 				AD3134A00A19621650D48045 /* CalendarView.swift in Sources */,
 				0DD89C6A3F7C3FDCEC4BE698 /* ContentView.swift in Sources */,
 				E195D60D105F499BD389D299 /* MenuBarController.swift in Sources */,
+				9FC461950DB64F1AA86FD7C2 /* MonthlyReelView.swift in Sources */,
 				0360F9D0F400F4CB5104C167 /* PlaybackView.swift in Sources */,
 				05AD3B72A6B18E939F42E3EC /* RecordView.swift in Sources */,
 				51ED3E4E24A59133670FA2CF /* SettingsView.swift in Sources */,
+				24FFE2E2B1A6F570F0146086 /* SharedAlbumView.swift in Sources */,
+				025F596ACD7C3DCEA1390FEA /* SharingService.swift in Sources */,
+				0C3A49618D0A0624E762B4DD /* SmartCategorizationService.swift in Sources */,
 				F2DA89F9B2A2B4BA3343BBFF /* Theme.swift in Sources */,
 				F406DD25A99A128D4C45BF71 /* VideoStore.swift in Sources */,
 			);
