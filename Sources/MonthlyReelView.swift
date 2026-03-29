@@ -85,6 +85,7 @@ struct MonthlyReelView: View {
                         .frame(width: 32, height: 32)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Previous month")
 
                 Spacer()
 
@@ -108,6 +109,7 @@ struct MonthlyReelView: View {
                         .frame(width: 32, height: 32)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Next month")
             }
 
             HStack(spacing: 12) {
@@ -124,6 +126,7 @@ struct MonthlyReelView: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(isGenerating)
+                .accessibilityLabel("Generate monthly reel")
 
                 Button {
                     exportReel()
@@ -138,6 +141,7 @@ struct MonthlyReelView: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(categories.isEmpty)
+                .accessibilityLabel("Export reel")
             }
         }
     }
@@ -257,6 +261,7 @@ struct MonthlyReelView: View {
             Image(systemName: "video.badge.plus")
                 .font(.system(size: 48))
                 .foregroundColor(Theme.textSecondary)
+                .accessibilityLabel("No clips available")
 
             Text("No clips this month")
                 .font(.system(size: 18, weight: .medium))
@@ -268,6 +273,7 @@ struct MonthlyReelView: View {
 
             monthNavigator
         }
+        .accessibilityElement(children: .combine)
     }
 
     private var monthNavigator: some View {
@@ -279,6 +285,7 @@ struct MonthlyReelView: View {
                     .foregroundColor(Theme.textPrimary)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Previous month")
 
             Text(monthName)
                 .font(.system(size: 16, weight: .semibold))
@@ -292,6 +299,7 @@ struct MonthlyReelView: View {
                     .foregroundColor(Theme.textPrimary)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Next month")
         }
         .padding(.top, 8)
     }
@@ -449,6 +457,8 @@ struct SmartCategoryRow: View {
                 }
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("\(category.title), \(category.totalVideos) videos")
+            .accessibilityHint(isExpanded ? "Double tap to collapse" : "Double tap to expand")
 
             if isExpanded {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -492,6 +502,7 @@ struct VideoThumbnailView: View {
                     }
             }
         }
+        .accessibilityLabel("Video thumbnail")
         .onAppear {
             loadThumbnail()
         }

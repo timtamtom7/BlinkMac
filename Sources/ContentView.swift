@@ -81,6 +81,7 @@ struct ContentView: View {
             Image(systemName: "video.slash")
                 .font(.system(size: 48))
                 .foregroundColor(Theme.textSecondary)
+                .accessibilityLabel("No video available")
 
             Text("No video recorded")
                 .font(.system(size: 18, weight: .medium))
@@ -90,6 +91,7 @@ struct ContentView: View {
                 .font(.system(size: 14, design: .monospaced))
                 .foregroundColor(Theme.textSecondary.opacity(0.6))
         }
+        .accessibilityElement(children: .combine)
     }
 
     private func formattedDate(_ date: Date) -> String {

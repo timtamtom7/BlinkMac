@@ -94,6 +94,7 @@ struct CalendarView: View {
                     .frame(width: 32, height: 32)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Previous month")
 
             Spacer()
 
@@ -111,6 +112,7 @@ struct CalendarView: View {
                     .frame(width: 32, height: 32)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Next month")
         }
     }
 
@@ -177,6 +179,7 @@ struct DayCell: View {
             }
         }
         .frame(height: 36)
+        .accessibilityLabel(accessibilityDateLabel)
     }
 
     private var textColor: Color {
@@ -187,5 +190,17 @@ struct DayCell: View {
         } else {
             return Theme.textPrimary
         }
+    }
+
+    private var accessibilityDateLabel: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, yyyy"
+        let base = formatter.string(from: date)
+        if hasVideo {
+            return "\(base), has video"
+        } else if isToday {
+            return "\(base), today"
+        }
+        return base
     }
 }

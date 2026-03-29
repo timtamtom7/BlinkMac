@@ -70,6 +70,7 @@ struct SharedAlbumView: View {
                 }
                 .buttonStyle(.plain)
                 .foregroundColor(.accentColor)
+                .accessibilityLabel("New shared album")
 
                 Button {
                     Task {
@@ -83,6 +84,7 @@ struct SharedAlbumView: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(sharingService.isSyncing)
+                .accessibilityLabel("Sync all albums")
             }
         }
         .listStyle(.sidebar)
@@ -312,15 +314,18 @@ struct CreateAlbumSheet: View {
 
             TextField("Album name", text: $albumName)
                 .textFieldStyle(.roundedBorder)
+                .accessibilityLabel("Album name")
 
             TextField("Friends (comma-separated emails)", text: $participants)
                 .textFieldStyle(.roundedBorder)
+                .accessibilityLabel("Friends' emails")
 
             HStack {
                 Button("Cancel") {
                     isPresented = false
                 }
                 .buttonStyle(.bordered)
+                .accessibilityLabel("Cancel")
 
                 Button("Create") {
                     let emails = participants
@@ -332,6 +337,7 @@ struct CreateAlbumSheet: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(albumName.isEmpty)
+                .accessibilityLabel("Create album")
             }
         }
         .padding(24)
@@ -354,12 +360,14 @@ struct InviteSheet: View {
 
             TextField("Friend's email", text: $email)
                 .textFieldStyle(.roundedBorder)
+                .accessibilityLabel("Friend's email")
 
             HStack {
                 Button("Cancel") {
                     isPresented = false
                 }
                 .buttonStyle(.bordered)
+                .accessibilityLabel("Cancel")
 
                 Button("Send Invite") {
                     sharingService.inviteToAlbum(albumId: albumId, email: email)
@@ -367,6 +375,7 @@ struct InviteSheet: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(email.isEmpty)
+                .accessibilityLabel("Send invite")
             }
         }
         .padding(24)
@@ -444,9 +453,11 @@ struct VideoCommentSheet: View {
                 TextField("Your name", text: $authorName)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 120)
+                    .accessibilityLabel("Your name")
 
                 TextField("Add a comment...", text: $newComment)
                     .textFieldStyle(.roundedBorder)
+                    .accessibilityLabel("Add a comment")
 
                 Button {
                     let comment = AlbumComment(
@@ -461,6 +472,7 @@ struct VideoCommentSheet: View {
                     Image(systemName: "paperplane.fill")
                 }
                 .disabled(newComment.isEmpty)
+                .accessibilityLabel("Send comment")
             }
             .padding()
         }
