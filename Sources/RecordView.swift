@@ -1,6 +1,6 @@
 import SwiftUI
 import AVFoundation
-import AppKit
+import UIKit
 
 struct RecordView: View {
     @Binding var isRecording: Bool
@@ -199,17 +199,17 @@ final class RecordingDelegate: NSObject, AVCaptureFileOutputRecordingDelegate, @
     }
 }
 
-struct CameraPreviewView: NSViewRepresentable {
+struct CameraPreviewView: UIViewRepresentable {
     let previewLayer: AVCaptureVideoPreviewLayer
 
-    func makeNSView(context: Context) -> NSView {
-        let view = NSView()
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
         previewLayer.frame = view.bounds
-        view.layer = previewLayer
+        view.layer.addSublayer(previewLayer)
         return view
     }
 
-    func updateNSView(_ nsView: NSView, context: Context) {
-        previewLayer.frame = nsView.bounds
+    func updateUIView(_ uiView: UIView, context: Context) {
+        previewLayer.frame = uiView.bounds
     }
 }

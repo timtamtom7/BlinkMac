@@ -1,6 +1,6 @@
 import Foundation
 import AVFoundation
-import AppKit
+import UIKit
 
 // MARK: - Video Model
 
@@ -21,7 +21,7 @@ struct Video: Identifiable, Sendable, Codable, Hashable, Equatable {
         self.recordedAt = recordedAt
     }
 
-    var thumbnail: NSImage? {
+    var thumbnail: UIImage? {
         VideoStore.shared.generateThumbnail(for: url)
     }
 }

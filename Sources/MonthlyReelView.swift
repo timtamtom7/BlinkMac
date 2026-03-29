@@ -482,12 +482,12 @@ struct SmartCategoryRow: View {
 
 struct VideoThumbnailView: View {
     let url: URL
-    @State private var thumbnail: NSImage?
+    @State private var thumbnail: UIImage?
 
     var body: some View {
         ZStack {
             if let image = thumbnail {
-                Image(nsImage: image)
+                Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100, height: 80)

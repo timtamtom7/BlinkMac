@@ -1,6 +1,6 @@
 import Foundation
 import AVFoundation
-import AppKit
+import UIKit
 
 final class VideoStore: ObservableObject, @unchecked Sendable {
     static let shared = VideoStore()
@@ -91,7 +91,7 @@ final class VideoStore: ObservableObject, @unchecked Sendable {
         todaysVideoURL = todaysVideo()
     }
 
-    func generateThumbnail(for url: URL) -> NSImage? {
+    func generateThumbnail(for url: URL) -> UIImage? {
         let asset = AVAsset(url: url)
         let generator = AVAssetImageGenerator(asset: asset)
         generator.appliesPreferredTrackTransform = true
@@ -99,7 +99,7 @@ final class VideoStore: ObservableObject, @unchecked Sendable {
 
         do {
             let cgImage = try generator.copyCGImage(at: .zero, actualTime: nil)
-            return NSImage(cgImage: cgImage, size: NSSize(width: cgImage.width, height: cgImage.height))
+            return UIImage(cgImage: cgImage)
         } catch {
             return nil
         }

@@ -125,11 +125,21 @@ struct AlbumDetailView: View {
     @State private var showCommentSheet = false
     @State private var commentTimestamp: Double?
 
+    private var activitySummary: [String: Int] {
+        sharingService.getActivitySummary(for: album)
+    }
+
+    private var sortedParticipants: [String] {
+        activitySummary.keys.sorted()
+    }
+
     var body: some View {
-        HSplitView {
+        HStack(spacing: 0) {
             // Left: activity feed
             activityFeedPanel
                 .frame(minWidth: 240, maxWidth: 320)
+
+            Divider()
 
             // Right: video grid
             videoGridPanel
@@ -145,6 +155,32 @@ struct AlbumDetailView: View {
 
     // MARK: - Activity Feed
 
+    private struct ParticipantRow: View {
+        let participant: String
+        let count: Int
+
+        var body: some View {
+            HStack(spacing: 8) {
+                Circle()
+                    .fill(Color.accentColor.opacity(0.3))
+                    .frame(width: 32, height: 32)
+                    .overlay {
+                        Text(String(participant.prefix(1)).uppercased())
+                            .font(.caption.bold())
+                    }
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(participant)
+                        .font(.subheadline.weight(.medium))
+                    Text("\(count) new video\(count == 1 ? "" : "s")")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .padding(.horizontal)
+        }
+    }
+
     private var activityFeedPanel: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Activity")
@@ -155,27 +191,9 @@ struct AlbumDetailView: View {
 
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
-                    let summary = sharingService.getActivitySummary(for: album)
-                    ForEach(Array(summary.keys.sorted()), id: \.self) { participant in
-                        if let count = summary[participant] {
-                            HStack(spacing: 8) {
-                                Circle()
-                                    .fill(Color.accentColor.opacity(0.3))
-                                    .frame(width: 32, height: 32)
-                                    .overlay {
-                                        Text(String(participant.prefix(1)).uppercased())
-                                            .font(.caption.bold())
-                                    }
-
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(participant)
-                                        .font(.subheadline.weight(.medium))
-                                    Text("\(count) new video\(count == 1 ? "" : "s")")
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                }
-                            }
-                            .padding(.horizontal)
+                    ForEach(sortedParticipants, id: \.self) { participant in
+                        if let count = activitySummary[participant] {
+                            ParticipantRow(participant: participant, count: count)
                         }
                     }
                 }
@@ -193,7 +211,7 @@ struct AlbumDetailView: View {
             }
             .padding()
         }
-        .background(Color(nsColor: .controlBackgroundColor))
+        .background(Color(.systemBackground))
     }
 
     // MARK: - Video Grid
@@ -255,7 +273,7 @@ struct SharedAlbumVideoCell: View {
         VStack(spacing: 4) {
             ZStack {
                 if let thumbnail = video.thumbnail {
-                    Image(nsImage: thumbnail)
+                    Image(uiImage: thumbnail)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 120, height: 80)
@@ -399,7 +417,7 @@ struct VideoCommentSheet: View {
             // Video preview
             ZStack {
                 if let thumbnail = video.thumbnail {
-                    Image(nsImage: thumbnail)
+                    Image(uiImage: thumbnail)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxHeight: 200)
