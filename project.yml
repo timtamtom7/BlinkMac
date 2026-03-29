@@ -28,3 +28,5 @@ targets:
       - sdk: AppKit.framework
       - sdk: SwiftUI.framework
       - sdk: AVKit.framework
+      - sdk: Vision.framework
+      - sdk: CoreImage.framework
