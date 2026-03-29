@@ -108,6 +108,8 @@ struct RecordView: View {
                 .fill(Theme.textPrimary)
                 .frame(width: 24, height: 24)
         }
+        .accessibilityLabel("Record button")
+        .accessibilityHint(isRecording ? "Tap to stop recording" : "Tap to start recording")
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { _ in isPressed = true }

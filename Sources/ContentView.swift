@@ -71,6 +71,8 @@ struct ContentView: View {
             }
             .buttonStyle(.plain)
             .scaleEffect(isRecording ? 0.95 : 1.0)
+            .accessibilityLabel("Record today's moment")
+            .accessibilityHint("Tap to start recording a 30-second video")
         }
     }
 
