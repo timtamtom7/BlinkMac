@@ -104,4 +104,12 @@ final class VideoStore: ObservableObject, @unchecked Sendable {
             return nil
         }
     }
+
+    func dateFromURL(_ url: URL) -> Date {
+        let filename = url.deletingPathExtension().lastPathComponent
+        let dateString = filename.replacingOccurrences(of: "Blink_", with: "")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.date(from: dateString) ?? Date()
+    }
 }

@@ -4,6 +4,7 @@ import SwiftUI
 struct BlinkApp: App {
     init() {
         NSApp.appearance = NSAppearance(named: .darkAqua)
+        MenuBarController.shared.setup()
     }
 
     var body: some Scene {

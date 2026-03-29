@@ -17,6 +17,7 @@
 		8E0111C6713BAFFAD5212413 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262F592ECE28B50B123CA133 /* SwiftUI.framework */; };
 		AD3134A00A19621650D48045 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80490EE1AAAF5F57A5A72D /* CalendarView.swift */; };
 		D480D4B8BC8F46752EE261B6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFD0424E841D9B578986EF2 /* AppKit.framework */; };
+		E195D60D105F499BD389D299 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B6ACABB0F149D3D31EB37 /* MenuBarController.swift */; };
 		F2DA89F9B2A2B4BA3343BBFF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0DB6EC796F5BFE1E1A673 /* Theme.swift */; };
 		F3894131CC0909CE004B214D /* BlinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B35E5A25DF6DC6DDDAE26BA /* BlinkApp.swift */; };
 		F406DD25A99A128D4C45BF71 /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF380F2D771C4216370063 /* VideoStore.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		13EBBEF69DF0FA385D2C7A9B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		262F592ECE28B50B123CA133 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		454B6ACABB0F149D3D31EB37 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		48431B2C296BDB92BF0BB93C /* Blink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B35E5A25DF6DC6DDDAE26BA /* BlinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkApp.swift; sourceTree = "<group>"; };
 		5F80490EE1AAAF5F57A5A72D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				5B35E5A25DF6DC6DDDAE26BA /* BlinkApp.swift */,
 				5F80490EE1AAAF5F57A5A72D /* CalendarView.swift */,
 				F9C26ECB05478C555E7069E7 /* ContentView.swift */,
+				454B6ACABB0F149D3D31EB37 /* MenuBarController.swift */,
 				637D72D210C19B8502FDD810 /* PlaybackView.swift */,
 				685171DB45E69143C88A89E8 /* RecordView.swift */,
 				83610EEA0A6FC7342A09E06E /* SettingsView.swift */,
@@ -173,6 +176,7 @@
 				F3894131CC0909CE004B214D /* BlinkApp.swift in Sources */,
 				AD3134A00A19621650D48045 /* CalendarView.swift in Sources */,
 				0DD89C6A3F7C3FDCEC4BE698 /* ContentView.swift in Sources */,
+				E195D60D105F499BD389D299 /* MenuBarController.swift in Sources */,
 				0360F9D0F400F4CB5104C167 /* PlaybackView.swift in Sources */,
 				05AD3B72A6B18E939F42E3EC /* RecordView.swift in Sources */,
 				51ED3E4E24A59133670FA2CF /* SettingsView.swift in Sources */,
